@@ -1,12 +1,13 @@
-package th.co.grouplease.operations;
+package crud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OperationsApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(OperationsApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
+
 }

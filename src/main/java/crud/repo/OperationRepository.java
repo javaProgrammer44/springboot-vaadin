@@ -1,9 +1,9 @@
 
-package th.co.grouplease.operations.repo;
+package crud.repo;
 
+import crud.model.Operation;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import th.co.grouplease.operations.model.Operation;
 
 import java.util.List;
 
@@ -16,6 +16,14 @@ public interface OperationRepository extends JpaRepository<Operation, Long> {
     List<Operation> findAllBy(Pageable pageable);
     
     List<Operation> findByOperationCodeLikeIgnoreCase(String nameFilter);
+
+
+
+
+    // For lazy loading and filtering
+    List<Operation> findByOperationCodeLikeIgnoreCase(String nameFilter, Pageable pageable);
+
+    long countByOperationCodeLikeIgnoreCase(String nameFilter);
 
 
 }

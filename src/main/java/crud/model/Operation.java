@@ -1,11 +1,8 @@
-package th.co.grouplease.operations.model;
+package crud.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -26,12 +23,17 @@ public class Operation implements Serializable {
     private String operationDescription;
 
 
+
     @NotNull(message = "Price is required")
     private Double price;
 
+
+    @Column(name = "default_dlt_charge")
     @NotNull(message = "Default DLT charge is required")
     private Double defaultDltCharge;
 
+
+    @Column(name = "default_wage")
     @NotNull(message = "Default Wage is required")
     private Double defaultWage;
 
