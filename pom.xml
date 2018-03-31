@@ -17,7 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <version.vaadin>8.3.1</version.vaadin>
-        <start-class>crud.Application</start-class>
+        <start-class>th.co.grouplease.Application</start-class>
     </properties>
 
     <dependencies>
@@ -39,11 +39,7 @@
             <artifactId>flyway-core</artifactId>
         </dependency>
 
-        <!-- vaadin4spring https://github.com/peholmst/vaadin4spring
-             contains lots of handy helpers for serious Spring + Vaadin
-             applications. This example uses event bus to decouple the editor
-             form from the MainUI class.
-        -->
+
         <dependency>
             <groupId>org.vaadin.spring.extensions</groupId>
             <artifactId>vaadin-spring-ext-boot</artifactId>
@@ -56,25 +52,15 @@
             <groupId>org.vaadin</groupId>
             <artifactId>viritin</artifactId>
         </dependency>
-        <!-- Using Vaadin add-ons with client side extensions is easy, switch
-        as an example in this project, see also vaadin-maven-plugin
-        configuration.
-        -->
-        <dependency>
-            <groupId>org.vaadin.teemu</groupId>
-            <artifactId>switch</artifactId>
-        </dependency>
+
+
 
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -113,11 +99,7 @@
                 <artifactId>viritin</artifactId>
                 <version>2.4</version>
             </dependency>
-            <dependency>
-                <groupId>org.vaadin.teemu</groupId>
-                <artifactId>switch</artifactId>
-                <version>3.0.0</version>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

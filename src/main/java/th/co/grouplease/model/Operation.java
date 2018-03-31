@@ -1,4 +1,4 @@
-package crud.model;
+package th.co.grouplease.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

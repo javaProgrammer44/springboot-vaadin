@@ -1,7 +1,7 @@
 
-package crud.repo;
+package th.co.grouplease.repo;
 
-import crud.model.Operation;
+import th.co.grouplease.model.Operation;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 

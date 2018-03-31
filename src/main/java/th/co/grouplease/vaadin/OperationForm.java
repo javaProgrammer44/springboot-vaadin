@@ -1,14 +1,13 @@
-package crud.vaadin;
+package th.co.grouplease.vaadin;
 
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.TextField;
-import crud.model.Operation;
-import crud.repo.OperationRepository;
+import th.co.grouplease.model.Operation;
+import th.co.grouplease.repo.OperationRepository;
 import org.vaadin.spring.events.EventBus;
 import org.vaadin.viritin.fields.DoubleField;
-import org.vaadin.viritin.fields.IntegerField;
 import org.vaadin.viritin.fields.MTextField;
 import org.vaadin.viritin.form.AbstractForm;
 import org.vaadin.viritin.layouts.MFormLayout;
@@ -50,9 +49,6 @@ public class OperationForm extends AbstractForm<Operation> {
 
     @Override
     protected void bind() {
-        // DateField in Vaadin 8 uses LocalDate by default, the backend
-        // uses plain old java.util.Date, thus we need a converter, using
-        // built in helper here
         super.bind();
     }
 

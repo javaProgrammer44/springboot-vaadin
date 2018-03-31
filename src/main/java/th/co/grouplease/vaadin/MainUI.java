@@ -1,4 +1,4 @@
-package crud.vaadin;
+package th.co.grouplease.vaadin;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
@@ -13,8 +13,8 @@ import com.vaadin.ui.UI;
 import java.util.ArrayList;
 import java.util.List;
 
-import crud.model.Operation;
-import crud.repo.OperationRepository;
+import th.co.grouplease.model.Operation;
+import th.co.grouplease.repo.OperationRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.vaadin.spring.events.EventBus;
@@ -150,7 +150,7 @@ public class MainUI extends UI {
     }
 
     @EventBusListenerMethod(scope = EventScope.UI)
-    public void onPersonModified(PersonModifiedEvent event) {
+    public void onPersonModified(OperationModifiedEvent event) {
         listEntities();
         operationForm.closePopup();
     }
