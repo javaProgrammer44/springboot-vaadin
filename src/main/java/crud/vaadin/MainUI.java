@@ -27,7 +27,7 @@ import org.vaadin.viritin.grid.MGrid;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 import org.vaadin.viritin.layouts.MVerticalLayout;
 
-@Title("PhoneBook CRUD example")
+@Title("Operation CRUD")
 @Theme("valo")
 @SpringUI
 public class MainUI extends UI {
@@ -39,10 +39,7 @@ public class MainUI extends UI {
     EventBus.UIEventBus eventBus;
 
     private MGrid<Operation> list = new MGrid<>(Operation.class)
-            .withProperties("id", "operationCode", "operationDescription","price","defaultDltCharge","defaultWage")
-//            .withColumnHeaders("id", "Name", "Email")
-            // not yet supported by V8
-            //.setSortableProperties("name", "email")
+            .withProperties( "operationCode", "operationDescription","price","defaultDltCharge","defaultWage")
             .withFullWidth();
 
     private MTextField filterByName = new MTextField()
@@ -147,8 +144,8 @@ public class MainUI extends UI {
         listEntities();
     }
 
-    protected void edit(final Operation phoneBookEntry) {
-        operationForm.setEntity(phoneBookEntry);
+    protected void edit(final Operation operation) {
+        operationForm.setEntity(operation);
         operationForm.openInModalPopup();
     }
 

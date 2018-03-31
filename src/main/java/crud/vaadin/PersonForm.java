@@ -15,6 +15,8 @@ import org.vaadin.viritin.form.AbstractForm;
 import org.vaadin.viritin.layouts.MFormLayout;
 import org.vaadin.viritin.layouts.MVerticalLayout;
 
+import java.util.concurrent.Callable;
+
 @UIScope
 @SpringComponent
 public class PersonForm extends AbstractForm<Person> {

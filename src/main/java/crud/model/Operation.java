@@ -8,11 +8,10 @@ import java.util.Objects;
 @Entity
 public class Operation implements Serializable {
 
-    private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
 
     @NotNull(message = "Operation Code is required")
@@ -21,7 +20,6 @@ public class Operation implements Serializable {
 
     @NotNull(message = "Operation Description is required")
     private String operationDescription;
-
 
 
     @NotNull(message = "Price is required")
@@ -42,11 +40,11 @@ public class Operation implements Serializable {
     }
 
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
