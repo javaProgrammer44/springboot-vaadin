@@ -3,6 +3,7 @@ package th.co.grouplease.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -17,6 +18,9 @@ public class Operation implements Serializable {
     @NotNull(message = "Operation Code is required")
     private String operationCode;
 
+
+    @Transient
+    private List<ReceiptCode> receiptCodeList;
 
     @NotNull(message = "Operation Description is required")
     private String operationDescription;
@@ -86,6 +90,14 @@ public class Operation implements Serializable {
 
     public void setDefaultWage(Double defaultWage) {
         this.defaultWage = defaultWage;
+    }
+
+    public List<ReceiptCode> getReceiptCodeList() {
+        return receiptCodeList;
+    }
+
+    public void setReceiptCodeList(List<ReceiptCode> receiptCodeList) {
+        this.receiptCodeList = receiptCodeList;
     }
 
     @Override

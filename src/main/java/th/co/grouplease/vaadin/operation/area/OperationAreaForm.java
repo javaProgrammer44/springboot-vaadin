@@ -1,35 +1,34 @@
-package th.co.grouplease.vaadin;
+package th.co.grouplease.vaadin.operation.area;
 
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.TextField;
-import th.co.grouplease.model.Operation;
-import th.co.grouplease.repo.OperationRepository;
 import org.vaadin.spring.events.EventBus;
 import org.vaadin.viritin.fields.DoubleField;
 import org.vaadin.viritin.fields.MTextField;
 import org.vaadin.viritin.form.AbstractForm;
 import org.vaadin.viritin.layouts.MFormLayout;
 import org.vaadin.viritin.layouts.MVerticalLayout;
+import th.co.grouplease.model.OperationArea;
+import th.co.grouplease.repo.OperationAreaRepository;
 
 @UIScope
 @SpringComponent
-public class OperationForm extends AbstractForm<Operation> {
+public class OperationAreaForm extends AbstractForm<OperationArea> {
 
     private static final long serialVersionUID = 1L;
 
     EventBus.UIEventBus eventBus;
-    OperationRepository repo;
+    OperationAreaRepository repo;
 
-    TextField operationCode = new MTextField("Operation Code");
-    TextField operationDescription = new MTextField("Operation Description");
-    DoubleField price = new DoubleField("price");
-    DoubleField defaultDltCharge = new DoubleField("defaultDltCharge");
-    DoubleField defaultWage = new DoubleField("defaultWage");
+    TextField provinceArea = new MTextField("Province Area");
+    DoubleField dltCharge = new DoubleField("DLT Charge");
+    DoubleField wage = new DoubleField("Wage");
 
-    OperationForm(OperationRepository r, EventBus.UIEventBus b) {
-        super(Operation.class);
+
+    OperationAreaForm(OperationAreaRepository r, EventBus.UIEventBus b) {
+        super(OperationArea.class);
 
         this.repo = r;
         this.eventBus = b;
@@ -39,10 +38,10 @@ public class OperationForm extends AbstractForm<Operation> {
             // persist changes
             repo.save(operation);
             // send the event for other parts of the application
-            eventBus.publish(this, new OperationModifiedEvent(operation));
+            eventBus.publish(this, new OperationAreaModifiedEvent(operation));
             this.closePopup();
         });
-        setResetHandler(p -> eventBus.publish(this, new OperationModifiedEvent(p)));
+        setResetHandler(p -> eventBus.publish(this, new OperationAreaModifiedEvent(p)));
 
         setSizeUndefined();
     }
@@ -56,11 +55,9 @@ public class OperationForm extends AbstractForm<Operation> {
     protected Component createContent() {
         return new MVerticalLayout(
                 new MFormLayout(
-                        operationCode,
-                        operationDescription,
-                        price,
-                        defaultDltCharge,
-                        defaultWage
+                        provinceArea,
+                        dltCharge,
+                        wage
                 ).withWidth(""),
                 getToolbar()
         ).withWidth("");
